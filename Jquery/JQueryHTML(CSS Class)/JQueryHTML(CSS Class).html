@@ -1,0 +1,196 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <style>
+            .para{
+                color:blue;
+                font-family: fantasy;
+                font-size: 25px;
+                background: red;
+                }
+            .para1{
+                color:lightblue;
+                font-family: fantasy;
+                font-size: 16px;
+                }
+            .klasa{
+                list-style-type: lower-alpha;
+                color: blue;
+            }
+            .klasa1{
+                font-size: 25px;
+                font-family: sans-serif;
+            }
+            #p2{
+                color:red;
+                font-family: fantasy;
+                font-size: 20px;
+                }
+            #p4{
+                width:200px;
+                height:200px;
+                border:5px solid black;
+                padding: 20px;
+                margin:50px;
+            }
+        </style>
+	</head>
+	<body>
+		<h1>CSS CLASSES</h1>
+		<h2>ADD CLASS</h2>
+        
+        <p id='p1'>Shkolla Digjitale</p>
+		<ol id='ol1'>
+			<li>prizren</li>
+			<li>prizren</li>
+			<li>prizren</li>
+		</ol>
+		<button id='but1'>AddClass</button>
+		<button id='but2'>AddClass1</button>
+		<script>
+			//.addClass() -Mund te shtojme class tek nje element i caktuar, apo edhe me shume elementeve ne te njejten kohe.
+			$(document).ready(function()
+			{
+				$('#but1').click(function()
+				{//Nje klass mund te ju shtohet me shume se nje elementi
+					$('#p1').addClass('para')
+				});
+			});
+            
+            $(document).ready(function()
+			{
+				$('#but2').click(function()
+				{
+					$('#ol1').addClass('klasa klasa1')
+				});
+			});
+		</script>
+		
+
+        
+        <h2>Remove CLASS</h2>
+        
+        <p id='p21' class='para1'>Shkolla Digjitale1</p>
+		<ol id='ol2'>
+			<li>prizren</li>
+			<li>prizren</li>
+			<li>prizren</li>
+		</ol>
+        <button id='but3'>RemoveClass</button>
+		
+		<script>
+			//.removeClass() -Mund te fshihet class tek nje element i caktuar, apo edhe me shume elementeve ne te njejten kohe.
+			$(document).ready(function()
+			{
+				$('#but3').click(function()
+				{
+					$('#p21').removeClass('para1')
+				});
+			});
+		</script>
+		
+        <h2>Toggle CLASS</h2>
+        
+        <p id='p3' >Shkolla Digjitale</p>
+		<ol id='ol2'>
+			<li>prizren</li>
+			<li>prizren</li>
+			<li>prizren</li>
+		</ol>
+        <button id='but4'>toggleClass</button>
+		<script>
+			//.toggleClass() -Mund te i shtohet dhe te i fshihet class tek nje element i caktuar, apo edhe me shume elementeve ne te njejten kohe.
+			$(document).ready(function()
+			{
+				$('#but4').click(function()
+				{
+					$('#p3').toggleClass('para1')
+				});
+			});
+		</script>
+		
+		
+		<h2>DIMENSIONS</h2>
+        
+        <p id='p4' class='para1'>Shkolla Digjitale</p>
+        <p id='p5' class='para1'></p>
+		<ol id='ol3'>
+			<li>prizren</li>
+			<li>prizren</li>
+			<li>prizren</li>
+		</ol>
+        <button id='but5'>Dimensions</button>
+        <button id='but6'>Dimensions1</button>
+        <button id='but7'>Dimensions2</button>
+        <button id='but8'>Dimensions3</button>
+        <button id='but9'>Dimensions4</button>
+        <button id='but10'>Dimensions5</button>
+        
+		<script>
+			//var x = 10;
+			$(document).ready(function()
+			{
+				$('#but5').click(function()
+				{
+                    var x='';
+                    x +='Width = '+ $('#p4').width()+'<br>';
+                    x +='Height = '+ $('#p4').height();
+                    $('#p5').html(x);
+			     });
+            });
+            
+            $(document).ready(function()
+			{
+				$('#but6').click(function()
+				{
+                    var x='';
+                    x +='Inner Width = '+ $('#p4').innerWidth()+'<br>';
+                    x +='Inner Height = '+ $('#p4').innerHeight();
+                    $('#p5').html(x);
+			     });
+            });
+            $(document).ready(function()
+			{
+				$('#but7').click(function()
+				{
+                    var x='';
+                    x +='Outer Width = '+ $('#p4').outerWidth()+'<br>';
+                    x +='Outer Height = '+ $('#p4').outerHeight();
+                    $('#p5').html(x);
+			     });
+            });
+            
+            
+            $(document).ready(function()
+			{
+				$('#but8').click(function()
+				{
+                    var x='';
+                    x +='Outer Width = '+ $('#p4').outerWidth(true)+'<br>';
+                    x +='Outer Height = '+ $('#p4').outerHeight(true);
+                    $('#p5').html(x);
+			     });
+            });
+            $(document).ready(function()
+			{
+				$('#but9').click(function()
+				{
+                    var x='';
+                    x +='Document Width = '+ $(document).width()+'\n';
+                    x +='Document Height = '+ $(document).height()+'\n';
+                    x +='Window Width = '+ $(window).width()+'\n';
+                    x +='Window Height = '+ $(window).height();
+                    alert(x);
+			     });
+            });
+            $(document).ready(function()
+			{
+				$('#but10').click(function()
+				{
+                    $('#p4').width(300).height(300);
+			     });
+            });
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JQuery Interactions</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+    </head>
+    <body>
+    
+        <h1>JQuery Interactions</h1>
+        <h2>Draggable Method</h2>
+        
+        <h3>Example 1</h3>
+        <div id="divi1" style="width: 150px;height: 150px;padding: 20px; background: red;" class="ui-widget-content">
+            <p>Prizren</p>
+        </div>
+        <script>
+            $(function() 
+            {
+                $("#divi1").draggable();
+            });
+        </script>
+    
+        
+        
+    
+    
+        <h3>Example 2 </h3>
+        <div id="div6" style="border:solid 1px;background:lightyellow; height:30px;">   
+            <span>You can duplicate me....</span>  
+        </div>  
+        <script>  
+            $("#div6 span").draggable ({  
+                helper : "clone"  
+            });  
+        </script> 
+    
+    
+        <h3>Example 3</h3>
+        <div id="divX" style="border:solid 1px;background:lightpink; height:30px;">  
+            <span>Click on me to see cursor type.</span>  
+        </div>  
+        <script>  
+            /* First make the item draggable */  
+            $("#divX span").draggable();  
+        
+            $("#divX span").bind('click', function( event ){  
+                var cursor = $( "#divX span" ).draggable( "option", "cursor" );  
+                var cursorAt = $( "#divX span" ).draggable( "option", "cursorAt" );  
+                alert("Cursor type - " + cursor + ", cursorAt - " + cursorAt);  
+            });  
+        </script>
+    
+    
+        <h3>Example 4</h3>
+        <div id="div7" style="border:solid 1px;background-color:pink;">  
+            <span>Dragging is disabled. You can't move me!</span><br><br>  
+        </div>  
+        <div id="div8" style="border:solid 1px;background-color:yellow;">  
+            <span>Dragging is enabled. Move Me!</span><br><br>  
+        </div>  
+        <script>  
+            $("#div7 span").draggable ();  
+            $("#div7 span").draggable ('disable');  
+            $("#div8 span").draggable ();  
+            $("#div8 span").draggable ('enable');  
+        </script> 
+    
+        
+        <h2>Droppable</h2>
+    
+        <div id="div9" style="background: lightblue; width: 100px; height: 100px; padding: 20px; float: left; margin: 10px 10px 10px 0;" class="ui-widget-content">
+            <p>Drag me to my target</p>
+        </div>
+ 
+        <div id="div10" style=" width: 200px; height: 200px; padding: 20px; float: left; margin: 10px;" class="ui-widget-header">
+            <p>Drop here</p>
+        </div>
+        <script>
+            $( function(){
+                $( "#div9" ).draggable();
+                $( "#div10" ).droppable({
+                    drop: function( event, ui ){
+                        $(this)
+                            .addClass( "ui-state-highlight" )
+                            .find( "p" )
+                            .html( "Dropped!" )
+                            .css("background","red");
+                    }
+                });
+            });
+        </script>
+        
+    
+    </body>
+</html>

@@ -1,0 +1,233 @@
+<!doctype html>  
+<html lang="en">  
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=shift_jis"> 
+       <title>jQuery UI Slider &amp; Spinner</title>  
+       <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+       <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+       <style type="text/css">  
+           #spinner-1 input {
+             width: 100px
+           }
+           #spinner-2,#spinner-3 input {
+               width: 100px
+           }
+           #spinner-6 input {
+               width: 100px
+           }
+           #tabs-1{
+               font-size: 14px;
+           }  
+           .ui-widget-header {  
+            background:lightpink;  
+            border: 1px solid #b9cd6d;  
+            color: lightyellow;  
+            font-weight: bold;  
+         }
+        .ui-tooltip-content::after, .ui-tooltip-content::before {  
+            content: "";  
+            position: absolute;  
+            border-style: solid;  
+            display: block;  
+            left: 90px;  
+           }  
+           .ui-tooltip-content::before {  
+               bottom: -10px;  
+               border-color: #AAA transparent;  
+               border-width: 10px 10px 0;  
+           }  
+           .ui-tooltip-content::after {  
+               bottom: -7px;  
+               border-color: white transparent;  
+               border-width: 10px 10px 0;  
+           } 
+       </style>
+        
+   </head>  
+   <body>  
+       <h1>Slider</h1>
+       <h3>Example 1</h3>
+      <div id="slider-1"></div> 
+      <script>  
+         $(function() {  
+            $( "#slider-1" ).slider();  
+         });  
+      </script>
+       
+       <h3>Example 2</h3>
+       <div id="slider-4"></div>  
+         <p>  
+            <label for="minval">Minumum value:</label>  
+            <input type="text" id="minval"   
+               style="border:0; color:red; font-weight:bold;">  
+         </p>  
+         <div id="slider-5"></div> 
+       
+       <script>  
+         $(function() {  
+            $( "#slider-4" ).slider({  
+               orientation:"horizontal"   
+            });  
+            $( "#slider-4" ).slider('disable');  
+            $( "#slider-5" ).slider({  
+               orientation:"horizontal",  
+               value:0,  
+               slide: function( event, ui ) {  
+                  $( "#minval" ).val( ui.value );  
+               }      
+            });  
+            $( "#minval" ).val( $( "#slider-5" ).slider( "value" ) );  
+         });  
+      </script> 
+       
+       <h3>Example 3</h3>
+        <p>  
+            <label for="price">Price range:</label>  
+            <input type="text" id="price"   
+            style="border:0; color:red; font-weight:bold;">  
+       </p>  
+       <div id="slider-3"></div> 
+       <script>  
+         $(function() {  
+            $( "#slider-3" ).slider({  
+               range:true,  
+               min: 0,  
+               max: 1000,  
+               values: [ 50, 300 ],  
+               slide: function( event, ui ) {  
+                  $( "#price" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );  
+               }  
+           });  
+         $( "#price" ).val( "$" + $( "#slider-3" ).slider( "values", 0 ) +  
+            " - $" + $( "#slider-3" ).slider( "values", 1 ) );  
+         });  
+       </script>
+       
+       <h1>Spinner</h1>  
+       <h3>Example 1</h3>   
+      <div id="example">  
+          <input type="text" id="spinner-1" value="0" />  
+      </div> 
+       
+       <script>  
+         $(function() {  
+            $( "#spinner-1" ).spinner();  
+         });  
+      </script>
+       
+       <h3>Example 2</h3>
+          
+       <div id="example">  
+          Spinner Min, Max value set:  
+          <input type="text" id="spinner-2" value="0" /><br><br>  
+          Spinner increments/decrements in step of of 1000:  
+          <input type="text" id="spinner-3" value="0" />  
+       </div> 
+       <script>  
+         $(function() {  
+            $( "#spinner-2" ).spinner({  
+               min: -50,   
+               max: 150  
+            });  
+            $('#spinner-3').spinner({  
+               step: 10000,   
+               min: -1000000,   
+               max: 1000000  
+            });  
+         });  
+      </script> 
+       
+       <h3>Example 3</h3>
+           
+      <input id="spinner-6" />  
+      <br/>  
+      <button id="stepUp-2">Increment</button>  
+      <button id="stepDown-2">Decrement</button>  
+      <button id="pageUp-2">Increment Page</button>  
+      <button id="pageDown-2">Decrement Page</button> 
+       <script>  
+         $(function() {  
+            $("#spinner-6").spinner();  
+            $('button').button();  
+  
+            $('#stepUp-2').click(function () {  
+               $("#spinner-6").spinner("stepUp");  
+            });  
+  
+            $('#stepDown-2').click(function () {  
+               $("#spinner-6").spinner("stepDown");  
+            });  
+  
+            $('#pageUp-2').click(function () {  
+               $("#spinner-6").spinner("pageUp");  
+            });  
+  
+            $('#pageDown-2').click(function () {  
+               $("#spinner-6").spinner("pageDown");  
+            });  
+         });  
+      </script>
+       
+       <h1>Tabs</h1>    
+       <div id="tabs-1">  
+           <ul>  
+               <li><a href="#tabs-2">Poem</a></li>  
+               <li><a href="#tabs-3">Joke</a></li>  
+               <li><a href="#tabs-4">Quote</a></li>  
+           </ul>  
+           <div id="tabs-2">  
+               <p>Twinkle, twinkle, little star,<br/>  
+                   How I wonder what you are.<br/>  
+                   Up above the world so high,<br/>  
+                   Like a diamond in the sky.<br/>  
+                   Twinkle, twinkle, little star,<br/>  
+                   How I wonder what you are!<br/>  
+               </p>  
+           </div>  
+           <div id="tabs-3">  
+               <p>Man said to God --- Why did you make women so beautiful?<br/>  
+                   God said to man --- So that you will love them.<br/>  
+                   Man said to God --- But why did you make them so dumb?<br/>   
+                   God said to man --- So that they will love you.<br/> </p>  
+           </div>  
+           <div id="tabs-4">  
+               <p>" The whole secret of existence is to have no fear." Buddha</p>  
+           </div>  
+       </div> 
+       <script>  
+         $(function(){  
+            $( "#tabs-1" ).tabs();  
+         });  
+      </script>
+       
+       <h1>Tooltip</h1>
+       <h3>Example 1</h3> 
+    
+       <label for="name">Name:</label>  
+       <input id="tooltip-7" title="Please use capital letters."> 
+       <script>  
+           $(function(){  
+               $("#tooltip-7").tooltip({  
+                   position: {  
+                       my: "center bottom",  
+                       at: "center top-10",  
+                       collision: "none"  
+                   }  
+               });  
+           });  
+       </script>
+       
+       <h3>Example 2</h3>
+          
+       <label for="comment">What is your comment:</label>  
+       <input id="tooltip-1" title="We are asking your comment just for feedback">  
+       <p><a id="tooltip-2" href="#" title="JavaTpoint is the best tutorial website.">I also have a tooltip</a></p> 
+       <script>  
+           $(function() {  
+               $("#tooltip-1").tooltip();  
+               $("#tooltip-2").tooltip();  
+           });  
+       </script> 
+    </body>  
+</html>  

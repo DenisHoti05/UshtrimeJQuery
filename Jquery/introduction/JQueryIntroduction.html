@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<!--<script src="jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+	<h2>Introduction to JQuery</h2>
+
+			<p>Prizren</p>
+			<p>Prishtine</p>
+
+			<button>Click</button>
+        
+	<!--Sintaksa e JQuery eshte $(selector).action() 
+
+			$- e tregon qasjen ne JQ, 
+            selector- per me e gjete HTML elementin,
+			action()- per me performue apo me u shfaq te ai element
+			
+
+            
+
+
+			$(this).hide() - i fsheh te gjitha elementet
+
+			$("p").hide() - i fsheh te gjitha <p> elementet
+	
+			$(".test").hide() - i fsheh te gjitha elementet me klasen class="test".
+
+			$("#test").hide() - i fsheh te gjitha elementet me id="test"-->
+			
+			<!--Document Ready Event 
+			$(document).ready(function(){
+			
+			// jQuery methods go here...
+			
+			});
+			
+			$(function(){
+
+			// jQuery methods go here...
+
+			});-->
+
+			<script>
+                //$("p").css("color","red");
+                
+				$(document).ready(function()
+				{
+					$("p").css("color","red"); //Vendosja e nje style permes tagut.
+				});
+		
+				$(document).ready(function()
+				{
+					$("#p1").css("color","blue");//Vendosja e nje style permes id.
+				});
+				
+				$(document).ready(function()
+				{
+					$(".h1").css("background-color","blue")
+				});
+				$(document).ready(function()
+				{
+					$("*").css("color","green"); //Vendosja e nje style permes universal selector
+				});
+                
+                
+			</script>
+			
+			<p id="p1">Shkolla Digjitale</p>
+			<p id="p2">Shkolla Digjitale</p>
+			<p id="p3">Shkolla Digjitale</p>
+        <h1 class="h1">Shkolla Digjitale</h1>
+        <h1 class="h1">Shkolla Digjitale</h1>
+        <h1 class="h1">Shkolla Digjitale</h1>
+            <button id='butt2'>Kliko1</button>
+			<script>
+                
+				$(document).ready(function()
+				{
+                  $('#butt2').click(function()
+					{
+						$(this).css('font-size','22px'); //Manipulimi me css permes metodes this
+						$(this).css('background','red');
+						
+                      });  
+                });
+                        //$(this).css({'font-size':'22px','background':'red'});
+						//Kur kemi te shenojme me shume se dy veti mund ta bejeme edhe ne kete menyre.
+
+					
+			</script>
+               <button id='but1'>Kliko2</button>
+			<script>
+				$(document).ready(function()
+				{
+					$('#but1').click(function()
+					{
+						$(this).hide(); //Manipulimi me elementet e HTML
+					});
+				});
+			</script>
+			<button id='butt3'>Kliko3</button>
+            <script>
+			$(document).ready(function()
+				{
+					$('#butt3').click(function()
+					{
+				
+				        $(this).css({'font-size':'22px','background':'red'});
+						//Kur kemi te shenojme me shume se dy veti mund ta bejeme edhe ne kete menyre.
+
+					});
+				});
+			
+               
+            </script>
+			
+			
+			
+			
+			
+    </body>
+</html>

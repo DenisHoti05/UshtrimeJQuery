@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	</head>
+	<body style="padding-left: 15px;">
+		<h1>JQuery Methods GET and SET data</h1>
+		<h2>GET</h2>
+        
+        <ol id='ol1'>
+			<li>prizren</li>
+			<li>prizren</li>
+			<li>prizren</li>
+		</ol>
+		<input id="input1"type="text" value="text1">
+		<button id='but1'>Text</button>
+		<button id='but2'>HTML</button>
+		<button id='but3'>Value</button>
+		<button id='but4'>Attribute</button>
+		<script>
+			//.text()
+			$(document).ready(function()
+			{
+				$('#but1').click(function()
+				{	//Permes metodes "text()" e nxjerrim si rezultat vetem tekstin e elementit
+					document.write($('#ol1').text());
+				});
+			});
+			//.html()
+			$(document).ready(function()
+			{
+				$('#but2').click(function()
+				{	//Permes metodes "html()" e nxjerrim perveq tekstit edhe taget e elementit, mirpo vetem ato tage qe jane brenda perbrenda.
+					document.write($('#ol1').html());
+				});
+			});
+			//.val()
+			$(document).ready(function()
+			{
+				$('#but3').click(function()
+				{	//Permes metodes ".val()" e nxjerr vleren e inputit qe eshte.
+					document.write($('#input1').val());
+				});
+			});
+			//.attr()
+			$(document).ready(function()
+			{
+				$('#but4').click(function()
+				{	//Permes metodes ".attr" nxirret vlera e atributit
+					document.write($('#input1').attr("type"));
+				});
+			});
+		</script>
+		
+		<h2>SET</h2>
+        
+        <img src="Nature.jpg" width="350px" height="300px">
+		<ol id='ol2'>
+			<li>prizren</li>
+			<li>prizren</li>
+			<li>prizren</li>
+		</ol>
+		<input id="input2" type="text" value="text">
+		<button id='but5'>Set Text</button>
+		<button id='but6'>Set HTML</button>
+		<button id='but7'>Set Value</button>
+		<button id='but8'>Set Attribute</button>
+        
+		<script>
+			//.test()
+			$(document).ready(function()
+			{
+				$('#but5').click(function()
+				{	//Permes metodes "text()" shtohet vlera qe e kemi caktuar
+					$('#ol2').text('shkolla');
+				});
+			});
+			//.html()
+			$(document).ready(function()
+			{
+				$('#but6').click(function()
+				{	//Permes metodes "html()" shtohet elementi qe e kemi caktuar.
+					$('#ol2').html('<li>shkolla</li>');
+				});
+			});
+			//.val()
+			$(document).ready(function()
+			{
+				$('#but7').click(function()
+				{	//
+					$('#input2').val('Kosova');
+				});
+			});
+			//.attr()
+			$(document).ready(function()
+			{
+				$('#but8').click(function()
+				{	//Permes metodes "attr()", shtohet vlera e attr qe i kemi treguar.
+					$('img').attr("src","foto.jfif")
+                    
+                    
+                    
+                    
+                   //Pyetje A mund te i shtohet edhe width edhe height nje fotos se caktuar.
+                    
+                    
+                    //$('img').attr({"src":"foto.jfif","width":"500px","height":"500px"});
+				});
+			});
+		</script>
+				
+	</body>
+</html>

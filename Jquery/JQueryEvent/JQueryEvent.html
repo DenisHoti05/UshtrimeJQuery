@@ -1,0 +1,269 @@
+<html>
+	<head>
+		<!--<script src="jquery-3.4.0.min.js"></script>-->
+		<!--<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>MOUSE EVENTS</h1>
+        <p id="p1">CLICK and DBLCLICK</p>
+			<script>
+                //CLICK Event
+				$(document).ready(function()
+				{
+					$('#p1').click(function() 
+					{
+						$(this).css({'font-size':'30px','color':'red'})
+					});
+				});
+                
+                
+                //DBLCLICK
+				$(document).ready(function()
+				{
+					$('#p1').dblclick(function()	
+					{ 
+						$(this).css({'font-size':'16px','color':'black'})
+					});
+				});
+			</script>
+        
+        
+			<p id='p2'>MOUSEENTER and MOUSELEAVE</p>
+			<script>
+                
+                //MOUSEENTER
+				$(document).ready(function()
+				{
+					$('#p2').mouseenter(function()	
+					{ 
+						$(this).css({'font-size':'40px','background':'yellow'})
+					});
+				});
+                
+                //MOUSELEAVE
+				$(document).ready(function()
+				{
+					$('#p2').mouseleave(function()	
+					{ 
+						$(this).css({'font-size':'16px','background':'white'})
+					});
+				});
+			</script>
+        
+			<p id='p3'>MOUSEDOWN and MOUSEUP</p>
+            <!--<p id='pp'>MOUSEDOWN and MOUSEUP</p>-->
+			<script>
+                
+                
+				$(document).ready(function() //Brenda nje ready mund te vendosen edhe me shume se nje event.
+				{   
+                    //MOUSEDOWN
+					$('#p3').mousedown(function()	
+					{ 
+						$(this).css({'color':'blue','background':'red'})
+					});
+				    
+                    //MOUSEUP
+					$('#p4').mouseup(function()	
+					{ 
+						$(this).css({'color':'black','background':'white'})
+					});
+				});
+			</script>
+        
+			<p id='p4'>HOVER</p>
+			<script>
+				$(document).ready(function() //Brenda nje ready mund te vendosen edhe me shume se nje event.
+				{   
+                    //HOVER
+					$('#p4').hover(function()	
+					{ 
+						$(this).css('background','red');
+					},
+					function()	
+					{ 
+						$(this).css('background','white');
+					});
+				});
+			</script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		<h1>FORM EVENTS</h1>
+        
+			<p>FOCUS and BLUR</p>
+        
+            <input id='input1'type="text" name="emri">
+        
+			<script>
+                
+                //FOCUS
+				$(document).ready(function()
+				{
+					$('#input1').focus(function()	
+					{
+						$(this).css('background','yellow'); 
+					});
+				});
+                
+                //BLUR
+				$(document).ready(function()
+				{
+					$('#input1').blur(function()	
+					{
+						$(this).css('background','lightblue'); 
+					});
+				});
+			</script>
+        
+        
+        
+			<p>SUBMIT</p>
+                <form>
+					Username: <input id='input2'type="text" name="username"><br><br>
+					Password: <input id='input3'type="password" name="password"><br><br>
+					<input id='input4'type='submit'>
+                </form>
+        
+			<script>
+                
+                //SUBMIT
+				$(document).ready(function()
+				{
+					$('form').submit(function()		
+					{
+						document.write('Correct!');
+					});
+				});
+			</script>
+        
+        
+        
+			<p>CHANGE</p>
+            <input id='input5'type="text" name="emri" value='Arianit'>
+        
+			<script>
+                
+                //CHANGE
+				$(document).ready(function()
+				{
+					$('#input5').change(function()	
+					{
+						document.write('Ndryshim teksti'); 
+					});
+				});
+			</script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		<h1>KEYBOARD EVENTS</h1>
+        
+			<p>KEYPRESS</p>
+        
+        
+        	<textarea id='input6' rows="10" cols="30"></textarea>
+		    <p id='p5'></p>
+		    <script>
+                //KEYPRESS
+				var x=0;
+				$(document).ready(function()
+				{
+                    //var x=0;
+					$('#input6').keypress(function()	
+					{
+                        
+						$('#p5').text(x += 1);
+					});
+				});
+			</script>
+        
+			<p>KEYDOWN AND KEYUP</p>
+        
+			<input id='input7'type='text'>
+        
+            <p id='p7'></p>
+        
+			<script>
+                
+				var x=0;
+				$(document).ready(function()
+				{
+                    //KEYDOWN
+					$('#input7').keydown(function()		
+					{
+						$('#p7').text(x += 1);
+					});
+                    
+                    //KEYUP
+					$('#input7').keyup(function()		
+					{
+						$('#p7').text(x -= 1);
+					});
+				});
+			</script>
+        
+			<h1>DOCUMENT/WINDOW EVENTS</h1>
+        
+			<p>RESIZE</p>
+        
+            <p id='p8'></p>
+        
+			<script>
+                
+                //RESIZE (nuk e kam zhvillue)
+				var y=0;
+				$(document).ready(function()
+				{
+					$(window).resize(function()	  
+					{
+						$('#p8').text(y += 1);
+					});
+				});
+			</script>
+        
+			<p>SCROLL</p>
+        
+			<input id='input7'type='text'>
+        
+            <p id='p9'></p>
+        
+			<script>
+                
+                //SCROLL (nuk e kam zhvillue)
+				var z=0;
+				$(document).ready(function()
+				{
+					$(window).scroll(function()   
+					{
+						$('#p9').text(z += 1);
+					});
+				});
+			</script>
+        
+        
+        
+        
+        
+        
+        
+        
+	<body>
+</html>

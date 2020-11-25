@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<h1>EFFECTS IN JQUERY</h1>
+		<p>BASIC EFFECTS</p>
+		
+		<p>HIDE and SHOW</p>
+		<p id='p1'>Paragraf</p>
+		<button id ='but1'>HIDE</button>
+		<button id ='but2'>SHOW</button>
+		<script>
+			$(document).ready(function()
+			{
+				$('#but1').click(function()
+				{
+					$('#p1').hide(); //Hide na mundeson qe te fshijme nje element
+				});
+				$('#but2').click(function()
+				{
+					$('#p1').show(); //Show na mundeson qe te shfaqim nje element te caktuar
+				});
+			});
+		</script>
+		<p id='p2'>Paragraf</p>
+		<button id ='but3'>Kliko</button>
+		<script>
+			//Detyre si behet me nje funksion te kryhen te dy veprimet (hide dhe show)?
+			$(document).ready(function()
+			{
+				$('#but3').click(function()
+				{
+					$('#p2').hide('slow'); //Mund te i shtojme edhe vlera tek hide, p.sh qe te fshihet 'slow','fast' apo me 'milisecond'
+				});
+				$('#but3').dblclick(function()
+				{
+					$('#p2').show('fast'); //Fast
+				});
+			});
+		</script>
+		<p>TOGGLE</p> 
+		<p id='p3'>PARAGRAFI</p>
+		<button id='but4'>Click</button>
+		<script>  //TOGGLE i ekzekuton te dy efektet edhe hide edhe show.
+			$(document).ready(function()
+			{
+				$('#but4').click(function()
+				{
+					$('#p3').toggle(5000); //Milisecond
+				});
+			});
+		</script>
+		<h1>Fading Effects</h1>
+		<p>FadeIn()and FadeOut()</p>
+		
+		<p id='p4'>Shkolla Digjitale</p>
+		<button id='but5'>FadeOut</button>
+		<button id='but6'>FadeIn</button>
+		<script>	
+			$(document).ready(function()
+			{
+				$('#but5').click(function()
+				{
+					$('#p4').fadeOut(2000); //fadeOut na mundeson qe nje element te e bejme transparent(opacity) deri ne vleren 0.0
+				});
+			});
+			$(document).ready(function()
+			{
+				$('#but6').click(function()
+				{
+					$('#p4').fadeIn(2000); //fadeIn na mundeson qe nje element te e bejme transparent(opacity)deri ne vleren 1.0
+				});
+			});
+		</script>
+		<p>FadeToggle()</p>
+		
+		<p id='p5'>Shkolla Digjitale</p>
+		<button id='but7'>FadeToggle</button>
+		<script>	//FadeToggle i ka te dy efektet edhe te fadeIn edhe te fadeOut
+			$(document).ready(function()
+			{
+				$('#but7').click(function()
+				{
+					$('#p5').fadeToggle(3000); //Gjithashtu mund edhe te ju tregojme per sa kohe duhet me na ndryshue transparenca(opacity).
+				});
+			});
+		</script>
+		<p>FadeTo()</p>
+		
+		<p id='p6'>Shkolla Digjitale</p>
+		<button id='but8'>FadeTo</button>
+		<script>	//FadeTo na mundeson qe nje element te ja vendosim transparencen deri ne nje vlere te caktur te opacity.
+			$(document).ready(function()
+			{
+				$('#but8').click(function()
+				{
+					$('#p6').fadeTo(1000,0.4); //Tek 'fadeTo()' perveq speed mund te ia caktojme edhe vleren e 'opacity'.
+				});
+			});
+		</script>
+		<h1>Sliding Effects</h1>
+		<p>SlideUp() and SlideDown()</p>
+	
+		<button id='but9'>SlideDown</button>
+		<button id='but10'>SlideUp</button>
+		<p id='p7' style='display:none'>Shkolla Digjitale</p>
+		<script>	
+			$(document).ready(function()
+			{
+				$('#but9').click(function()
+				{
+					$('#p7').slideDown(2000); //E shfaqe elementit e selektuar duke rreshqitur.
+				});
+			});
+			$(document).ready(function()
+			{
+				$('#but10').click(function()
+				{
+					$('#p7').slideUp(2000); //E zhduk elementin e selektuar duke rreshqitur mbrapa
+				});
+			});
+		</script>
+		<p>SlideToggle()</p>
+		
+		
+		<button id='but11'>slideToggle</button>
+		<p id='p8'>Shkolla Digjitale</p>
+		<script>	//SlideToggle i ka te dy efektet edhe te SlideDown edhe te SlideUp
+			$(document).ready(function()
+			{
+				$('#but11').click(function()
+				{
+					$('#p8').slideToggle(2000); //Gjithashtu mund edhe te ju tregojme per sa kohe duhet te shfaqen apo te zhduken elementet.
+				});
+			});
+		</script>	
+	</body>
+</html>

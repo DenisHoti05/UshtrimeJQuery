@@ -1,0 +1,129 @@
+<!doctype html>  
+<html lang="en">  
+   <head>  
+      <meta charset="utf-8">  
+      <title>jQuery UI Menu functionality</title>  
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      <!-- CSS -->  
+      <style>  
+         .ui-menu {  
+            width: 200px;  
+         }  
+        .ui-widget-header {  
+            background: blue;  
+            border: 1px solid #DDDDDD;  
+            color: #333333;  
+            font-weight: bold;  
+         }
+        fieldset {  
+            border: 0;  
+          }  
+          label {  
+              display: block;  
+              margin: 30px 0 0 0;  
+          }  
+          select {  
+              width: 200px;  
+          }  
+          .overflow {  
+              height: 200px;  
+          }  
+      </style>      
+   </head>  
+   <body>  
+       <h1>Menu</h1> 
+       <ul id="menu-1">  
+           <li><a href="#">C</a></li>  
+           <li><a href="#">C++</a></li>  
+            <li><a href="#">Java</a>  
+                <ul>  
+                    <li><a href="#">Core Java</a></li>  
+                    <li><a href="#">J2EE</a></li>  
+                    <li><a href="#">Spring</a></li>  
+                    <li><a href="#">Hibernate</a></li>  
+                    <li><a href="#">Struts</a></li>  
+                </ul>  
+           </li>  
+           <li><a href="#">JSF</a></li>  
+           <li><a href="#">HTML5</a></li>  
+       </ul>  
+       <script>  
+           $(function(){  
+               $("#menu-1").menu();  
+           });  
+      </script>
+       
+       
+       <h1>Progress Bar</h1>  
+       <div id="progressbar-1"></div>   
+      <script>  
+         $(function() {  
+            $( "#progressbar-1" ).progressbar({  
+               value: 50  
+            });  
+         });  
+      </script>
+       
+       <h1>Select Menu</h1>
+       <div class="demo">  
+   
+           <form action="#">  
+               <fieldset>  
+                   <label for="speed">Select a speed</label>  
+                   <select name="speed" id="speed">  
+                       <option>Slower</option>  
+                       <option>Slow</option>  
+                       <option selected="selected">Medium</option>  
+                       <option>Fast</option>  
+                       <option>Faster</option>  
+                   </select>  
+                   <label for="files">Select a file</label>  
+                   <select name="files" id="files">  
+                       <optgroup label="Scripts">  
+                           <option value="jquery">jQuery.js</option>  
+                           <option value="jqueryui">ui.jQuery.js</option>  
+                       </optgroup>  
+                       <optgroup label="Other files">  
+                           <option value="somefile">Some unknown file</option>  
+                           <option value="someotherfile">Some other file with a very long option text</option>  
+                       </optgroup>  
+                   </select>     
+                   <label for="number">Select a number</label>  
+                   <select name="number" id="number">  
+                       <option selected="selected">1</option>  
+                       <option>2</option>  
+                       <option>3</option>  
+                       <option>4</option>  
+                       <option>5</option>  
+                       <option>6</option>  
+                       <option>7</option>  
+                       <option>8</option>  
+                       <option>9</option>  
+                       <option>10</option>  
+                       <option>11</option>  
+                       <option>12</option>  
+                       <option>13</option>  
+                       <option>14</option>  
+                       <option>15</option>  
+                       <option>16</option>  
+                       <option>17</option>  
+                       <option>18</option>  
+                       <option>19</option>  
+                   </select>  
+               </fieldset>  
+           </form>    
+       </div> 
+       <script>  
+           $(function() {  
+               $("#speed").selectmenu();  
+               $("#files").selectmenu().selectmenu( "option", "disabled", true );;  
+               $("#number")  
+                   .selectmenu()  
+                   .selectmenu( "menuWidget" )  
+                   .addClass( "overflow" );  
+           });  
+       </script> 
+   </body>  
+</html> 
